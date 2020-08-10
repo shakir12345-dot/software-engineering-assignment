@@ -1,0 +1,116 @@
+Title:
+    Understanding What Software Engineers Are Working on.
+
+
+Authors name:
+    1.Ralf Lammel
+    2.Alvin Kerber
+    3.Liane Praza
+
+
+
+Where it from:
+    This paper appears in Proceedings of 28th International Conference on Program Comprehension, ICPC 2020. The subject of the paper
+is covered by the first authors keynote at the same conference.
+
+
+
+Introduction:
+    A process unaware (information) system’ [9] does not expose processes in a direct manner at an architectural and user level. 
+In thispaper, we are concerned with a very similar problem in the context of the ecosystems and processes that engineers use to
+develop, to deploy, and to maintain software systems: the challenge of predicting what work item a software engineer is working on
+    The events on the timeline concern different ‘diffs’ (i.e., system changes all the way from committing a change locally to
+landing the change in production) as work items. White events are trivially associated with diffs.Gray events require dedicated
+data integration for association. Black events are hard to associate; advanced heuristics and machine learning may be ofuse.
+That is which of the three diffs should be associated with the DB queryand the documentation access?
+    Abbreviation: WIP challenge.1 We speak of a challenge here because of these defining characteristics: 
+ i) engineers rely on amultitude (perhaps hundreds) of loosely integrated tools; 
+ ii) engineers engage in concurrent and relatively long running workflows;
+ ii) infrastructure (such as logging) is not fully aware of work items;
+ iv) engineering processes (e.g., for incident response) are not explicitly modeled. In combination, these characteristics give rise
+to what we call ‘dark matter’; see Figure 1 for an illustration.Being able to predict the work item along the timeline of each
+developer has profound applications, for example, in the context of
+incident response in engineering (with relevance for reliability, integrity, privacy, and security) or the aggregation of key
+performanceindicators for engineering processes.
+    Call to Arms. While there exists significant related work on capturing and analyzing workflows of software engineers (e.g.,
+in terms of the use of VCSs or IDEs [10, 15, 18]), this paper calls to arms on research addressing the WIP challenge in terms of the
+defining characteristics to enable work-item prediction for softwareengineering workflows in software-intensive organizations. Future
+work is needed to leverage, advance, and combine techniques fromprogram comprehension, mining software repositories, process mining, 
+and machine learning.
+    Roadmap of the Paper. We explain the WIP challenge in more
+detail on the grounds of representative scenarios.
+
+
+REPRESENTATIVE SCENARIOS:
+        At Facebook, we have encountered the need for and engaged in efforts towards addressing the WIP challenge on several
+ occasions.We now describe two different scenarios in which work-item prediction is required. We inject some data points or
+ illustrations to underline the defining characteristics of the WIP challenge. For non-disclosure reasons, we cannot report more
+ specifics of any actual WIP scenarios at Facebook, but we consider the selected scenarios as representative of what is needed
+ in software-intensive organizations.
+
+The ‘Incident Response’ Scenario:
+        Summary. Engineers need to respond to an incident (an alert)such as suboptimal performance of an important system component.
+To this end, engineers would like to reuse workflow steps by experienced engineers who investigated and mitigated similar incidents
+in the past.
+
+  Details.
+    • For some types of incidents, there may exist team-specificor more generic documentation with workflows for incident response, 
+      but it may be outdated or too unspecific. In fact,there are so many different kinds of incidents and the response workflows change 
+      over time. Thus, some form of automatic documentation’ is needed.
+    • If we were to extract workflow steps from past incident responses, we need to identify all events associated with a given 
+      incident ID. Available logging does not suffice for such association in practice, due to a multitude of loosely integrated tool. 
+      Simple heuristics are insufficient because engineers engage in concurrent and relatively long running workflows.
+    • We may attempt reverse engineering and data mining to recover the incident IDs from logs. This would be a continuousand 
+      possibly prohibitively expensive effort, given the complexity and the evolution of the tool suite to be considered.
+    • We may instead attempt re-engineering to improve, for example, logging, thereby improving tool integration. This
+      would risk reliability of the infrastructure / the ecosystem.This would also cause disruption, as the integration would affect
+      engineering processes, which would also be the case, if we were to start from the premise of explicit modeling of engineering
+      processes.
+
+
+A SYSTEM FOR DIFF PREDICTION:
+        We will now sketch a system for work-item prediction which we developed and deployed at Facebook. The system is focused on
+diffs as work items, but it incorporates other types of work items,as a matter of design – notably tasks (i.e., work items for 
+project management and planning at Facebook). The system leverages heuristics and machine learning.
+   While the system can be used, for example, to address the ‘Aggregate Performance’ scenario of Section 2, it was initially 
+developed and deployed to address a specific security-related use case, which is not discussed here for non-disclosure reasons.
+
+
+LESSONS LEARNED:
+        Based on our work on work-item prediction at Facebook (diffs and other types of work items), we share some lessons learned.
+For nondisclosure reasons, we cannot report empirical results on work-item prediction. Instead, we focus here on more general 
+findings.
+
+
+RELATED WORK:
+        Let us review related to work so that we connect the WIP challenge and the sketched efforts at Facebook to prior art. 
+Related work is from the areas of program comprehension, mining software repositories, process mining, and machine learning. 
+We group related work entries by some common themes.
+
+
+RESULT CONCLUDING REMARKS:
+        In this paper, we have established the work-item prediction challenge, as it applies to software engineering workflows 
+in softwareintensive organizations.
+   The defining characteristics of the challenge are these: i) engineers rely on a multitude (perhaps hundreds) of loosely integrated
+tools; ii) engineers engage in concurrent and relatively long running workflows; ii) infrastructure (such as logging) is not fully aware
+of work items; iv) engineering processes (e.g., for incident response) are not explicitly modeled.
+   In practice, an ensemble of heuristic- and ML-based components is needed to predict work items on the timelines of employees.
+We have described related efforts at Facebook, where diffs (system changes), as a type of work item, are predicted.
+Such prediction is readily useful in the context of incident response in engineering (with relevance for reliability, integrity,
+privacy, and security) or the aggregation of key performance indicators for engineering processes.
+   We have provided an extended related work discussion which connects the work-item prediction challenge to research in the areas
+of program comprehension, mining software repositories, process mining, and machine learning. This discussion documents the need
+for and the potential of leveraging, advancing, and combining existing techniques to tackle the work-item prediction challenge more
+efficiently in practice.
+
+
+
+
+       
+
+
+
+
+
+   
+
