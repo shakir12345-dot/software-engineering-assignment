@@ -26,9 +26,10 @@ things are often a bit harder to do in Haskell,” and another programmer [58] e
 “[lazy evaluation] can be a bit confusing to understand how it works in practice especially if you’re still thinking like an imperative
 programmer.” Even languages sharing the same runtime can be problematic: “whenever I pick up CoffeeScript, I feel as if most
 of my understanding of JavaScript suddenly vanishes into thin air.” [50] From these stories, one common refrain occurs: previous
-programming knowledge is sometimes less helpful than expected, and can actively interfere with learning. This seems counterintuitive. Why can previous knowledge actually make learning harder
-and not easier?
-    In psychology and neuroscience, studies have shown that confusion can occur when older information interacts with newer information [12, 35, 36, 52, 53, 67]. To illustrate, suppose the bread aisle
+programming knowledge is sometimes less helpful than expected, and can actively interfere with learning. This seems counterintuitive. 
+Why can previous knowledge actually make learning harder and not easier?
+    In psychology and neuroscience, studies have shown that confusion can occur when older information interacts with newer information 
+    [12, 35, 36, 52, 53, 67]. To illustrate, suppose the bread aisle
 of your favorite store was recently moved. You may reflexively start walking towards the old location due to interference—when previous
 knowledge disrupts recall of newly learned information. However, if you recently saw that the impossible burger was added to the
 frozen section (and not a separate health aisle), using knowledge that frozen food can be found in the frozen section is an example
