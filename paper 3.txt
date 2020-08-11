@@ -1,0 +1,135 @@
+Title:
+    Here We Go Again: Why Is It Difficult for Developers to Learn
+    Another Programming Language?
+
+
+Authors name:
+    1.Nischal Shrestha
+    2.Colton Botta
+    3.Titus Barik
+    4.Chris Parnin
+
+
+Where it from:
+     In 42nd International Conference on Software Engineering (ICSE’20), May 23–29, 2020, Seoul, Republic of Korea. ACM, New York,
+NY, USA.
+
+
+Introduction:
+    Numerous stories on language transitions suggest that even experienced programmers have difficulty learning new languages.
+For example, a Java programmer who transitioned to Kotlin [68] reports that differences like reversed type notation and how classes
+in Kotlin are final by default, made the transition less smooth than expected: “if you think that you can learn Kotlin quickly because
+you already know Java—you are wrong. Kotlin would throw you in the deep end.” Similarly, a programmer experienced in C++ who
+switched to Rust [15] found that Rust’s borrow checker, “forces a programmer to think differently.” Transitions across radically
+different languages are especially difficult. For example, a Java programmer switched to Haskell [25] and expressed that “the easy
+things are often a bit harder to do in Haskell,” and another programmer [58] experienced in procedural languages warned that
+“[lazy evaluation] can be a bit confusing to understand how it works in practice especially if you’re still thinking like an imperative
+programmer.” Even languages sharing the same runtime can be problematic: “whenever I pick up CoffeeScript, I feel as if most
+of my understanding of JavaScript suddenly vanishes into thin air.” [50] From these stories, one common refrain occurs: previous
+programming knowledge is sometimes less helpful than expected, and can actively interfere with learning. This seems counterintuitive. Why can previous knowledge actually make learning harder
+and not easier?
+    In psychology and neuroscience, studies have shown that confusion can occur when older information interacts with newer information [12, 35, 36, 52, 53, 67]. To illustrate, suppose the bread aisle
+of your favorite store was recently moved. You may reflexively start walking towards the old location due to interference—when previous
+knowledge disrupts recall of newly learned information. However, if you recently saw that the impossible burger was added to the
+frozen section (and not a separate health aisle), using knowledge that frozen food can be found in the frozen section is an example
+of facilitation [11]—when previous knowledge helps retrieval of new information. In the same vein, when a Java programmer is
+learning Kotlin, we postulate that their prior Java knowledge either facilitates or interferes with learning. The knowledge that Java
+is objected-oriented and uses static typing facilitates their learning as Kotlin shares similar properties. The knowledge that Java
+classes are not final by default interferes with their learning because Kotlin classes are final by default. If previous programming
+knowledge can be framed as a source of interference with new programming language acquisition, interference theory can explain
+why programming language learning can be difficult for experienced programmers. And when previous programming knowledge isn’t
+relevant, learning can also be difficult because this knowledge doesn’t facilitate.
+    To investigate our hypothesis, we first looked for evidence that programmers could have difficulty learning another language due
+to interference from their previous knowledge. To this end, we conducted an empirical study examining questions posted on a
+popular question-and-answer site, Stack Overflow.1 We analyzed 450 posts for 18 different programming languages and qualitatively
+coded each post, characterizing posts in terms of whether or not programmers made incorrect assumptions based on their previous 
+programming knowledge. Then, to understand what learning strategies programmers used when learning another language—and why previous 
+knowledge could interfere with this process—we interviewed 16 professional programmers who had recently switched to a new programming 
+language.
+    We found that: 
+        • Cross-language interference is a problem: 276 (61%) crosslanguage posts on Stack Overflow contained incorrect assumptions
+          due to interference with previous language knowledge.
+        • Based on our interviews, professional programmers primarily learned new languages on their own, using an opportunistic 
+          strategy that often involved relating the new language to previous language knowledge; however, this results in interference
+          which harms their learning.
+        • Learning a new language involves breaking down old habits, shifting one’s mindset, dealing with little-to-no mapping to 
+          previous languages, searching for proper documentation, and retooling in a new environment. All together, these challenges 
+          make learning another language difficult.
+
+
+METHODOLOGY:
+    To explore how programmers learn a new language, and understand their potential sources of confusion, we conducted a mixed-methods
+study through an empirical investigation of Stack Overflow posts across various languages and through semi-structured interviews. 
+We do so through the following research questions:
+
+
+RESEARCH QUESTIONS:
+    • RQ1: Does cross-language interference occur? We examined questions programmers had about programming languages on Stack Overflow
+      for evidence of interference with previous programming knowledge.
+    • RQ2: How do experienced programmers learn new languages? To gain a better understanding of why cross-language interference occurs, 
+      we interviewed professional programmers on how they learn new languages.
+    • RQ3: What do experienced programmers find confusing in new languages? To examine the ways in which programmers mix a new language 
+      with their previous knowledge, we asked programmers about obstacles they faced, and surprises they encountered in their new 
+      languages.
+
+
+RESULTS:
+    RQ1: Does cross-language interference occur?
+
+        Cross-language interference occurs on Stack Overflow across various language pairs. We found a total of 276 instances of incorrect 
+    assumptions (Table 2), which is around 61% of the 450 posts inspected. There were a total of 174 posts with correctly stated assumptions, 
+    which is only around 39% of the total posts. It’s important to note that this provides evidence of interference occurring but does not
+    imply programmers have incorrect assumptions 61% of the time. The <Kotlin, Java> pair had the highest number of posts with incorrect 
+    assumptions, which reflects the Java programmer’s confusion mentioned in Section 1. The next two pairs, <C#, Visual Basic> and <Scala,
+    Java>, also contained a high number of incorrect assumptions. However, there were other pairs like <Python, C++>, <Java, C#>, and 
+    <PHP, Java>, which had a more even distribution of posts with correct and incorrect assumptions; this suggests easier transitions 
+    between the languages. While reviewing the 450 Stack Overflow posts, we encountered instances where programming languages behaved in 
+    surprising ways for programmers. We highlight three examples, two of which involved interference between syntax and concepts, and one 
+    which involved facilitation—making it easier to use type inference.
+ 
+    RQ2: How do experienced programmers learn new languages?
+
+         Programmers learned languages on their own. Programmers who switched teams lacked formal training for the new language and 
+    its associated technology stack, leaving learning to themselves. For example, when P1 switched from C# to Python for a new project, 
+    there wasn’t any training involved and the on-boarding process was, “hey we want to get exposed to the Python world, go get started!” 
+    Although some programmers were given training initially on the project, “realistically for learning the new language [they] were pretty 
+    much on [their] own” (P7). This forced programmers to watch “language tutorial videos on Pluralsight”7 (P5) or read online documentation. 
+    Some programmers “got initial tips from some folks from the team on what’s what” (P6), and when running into complex issues “reached 
+    out to the group and said has somebody else hit this before?” (P1).
+
+     RQ3: What do experienced programmers find confusing in new languages?
+     
+         Old habits die hard. Programmers had to constantly suppress old habits acquired from previous languages. For example, P3—who
+     was used to Python—had trouble adapting to block delimiters in PHP, where “it’s near-impossible to figure out exactly which opening 
+     brace you’re closing once your HTML/PHP gets to any complexity at all.” Similarly, P15 realized that “in Swift, the open curly bracket
+     needs to be on the initial line of the method declaration and if you put it on the next line the method may not execute in an expected
+     fashion.” There were minor but frustrating difference like 0 versus 1 indexing for lists in languages such as Python and R. P4 described 
+     their frustration in “typing a[1] thinking that it’s a[0], and then wasting 5 minutes like a complete fool not understanding why 
+     nothing makes sense” (P4). Programmers are able to resolve these small differences, but it still causes interference at the onset of 
+     learning a new language.
+
+
+RELATED WORK:
+    Novice misconceptions. Programmers often have misconceptions while learning new programming languages, but most studies have
+focused on novices. Swidan et al. [64] proposes “intervention methods to counter those misconceptions as early as possible,” but this
+work is primarily targeted to novices. Similarly, Kaczmarczyk et al. [37] has examined misconceptions and how to measure them for novices. 
+In contrast, the novelty of our work is towards experienced programmers who need to switch languages [44],and requires methods of learning 
+distinct from those designed for novices [32, 38, 63]. Our study investigated switching languages for experienced programmers and took the 
+first steps in examining how knowledge of previous languages interfere when learning another language.
+
+
+CONCLUSION:
+    In this study, we conducted a mixed-methods study to understand what impact previous programming language experience has on programmers. 
+We conducted an empirical study of misconceptions found in Stack Overflow questions across 18 different programming languages and 
+semi-structured interviews with 16 professional programmers. From Stack Overflow, we found 276 instances of interference that occur 
+across multiple languages. We then interviewed programmers who reported various challenges learning a new language—like mixing up the 
+syntax and concepts with their previous programming languages—due to interference. We discussed design implications for technical authors, 
+toolsmiths, and language designers, such as designing documentation and building automated tools that reduce interference, anticipating 
+uncommon language transitions during language design, and welcoming programmers not just into a language, but its entire ecosystem. 
+To answer the question posed in the prelude, even professional programmers have difficulties with learning programming languages, 
+and we should offer tools and techniques to help them learn more efficiently and effectively.
+
+
+
+  
+
