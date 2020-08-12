@@ -1,4 +1,4 @@
-Title:
+1) Title:
     Here We Go Again: Why Is It Difficult for Developers to Learn
     Another Programming Language?
 
@@ -10,12 +10,12 @@ Authors name:
     4.Chris Parnin
 
 
-Where it from:
+Conference:
      In 42nd International Conference on Software Engineering (ICSE’20), May 23–29, 2020, Seoul, Republic of Korea. ACM, New York,
 NY, USA.
 
 
-Introduction:
+2) Introduction:
     Numerous stories on language transitions suggest that even experienced programmers have difficulty learning new languages.
 For example, a Java programmer who transitioned to Kotlin [68] reports that differences like reversed type notation and how classes
 in Kotlin are final by default, made the transition less smooth than expected: “if you think that you can learn Kotlin quickly because
@@ -40,6 +40,10 @@ classes are not final by default interferes with their learning because Kotlin c
 knowledge can be framed as a source of interference with new programming language acquisition, interference theory can explain
 why programming language learning can be difficult for experienced programmers. And when previous programming knowledge isn’t
 relevant, learning can also be difficult because this knowledge doesn’t facilitate.
+
+
+MOTIVATION:
+
     To investigate our hypothesis, we first looked for evidence that programmers could have difficulty learning another language due
 to interference from their previous knowledge. To this end, we conducted an empirical study examining questions posted on a
 popular question-and-answer site, Stack Overflow.1 We analyzed 450 posts for 18 different programming languages and qualitatively
@@ -58,6 +62,8 @@ language.
           make learning another language difficult.
 
 
+3) RESEARCH AND METHODOLODY:
+
 METHODOLOGY:
     To explore how programmers learn a new language, and understand their potential sources of confusion, we conducted a mixed-methods
 study through an empirical investigation of Stack Overflow posts across various languages and through semi-structured interviews. 
@@ -74,7 +80,7 @@ RESEARCH QUESTIONS:
       languages.
 
 
-RESULTS:
+4) RESULTS:
     RQ1: Does cross-language interference occur?
 
         Cross-language interference occurs on Stack Overflow across various language pairs. We found a total of 276 instances of incorrect 
