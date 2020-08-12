@@ -1,4 +1,4 @@
-Title:
+1) Title:
     Understanding What Software Engineers Are Working on.
 
 
@@ -9,13 +9,13 @@ Authors name:
 
 
 
-Where it from:
+conference:
     This paper appears in Proceedings of 28th International Conference on Program Comprehension, ICPC 2020. The subject of the paper
 is covered by the first authors keynote at the same conference.
 
 
 
-Introduction:
+2) Introduction:
     A process unaware (information) system’ [9] does not expose processes in a direct manner at an architectural and user level. 
 In thispaper, we are concerned with a very similar problem in the context of the ecosystems and processes that engineers use to
 develop, to deploy, and to maintain software systems: the challenge of predicting what work item a software engineer is working on
@@ -41,7 +41,9 @@ and machine learning.
 detail on the grounds of representative scenarios.
 
 
-REPRESENTATIVE SCENARIOS:
+Motivation:
+
+ REPRESENTATIVE SCENARIOS:
         At Facebook, we have encountered the need for and engaged in efforts towards addressing the WIP challenge on several
  occasions.We now describe two different scenarios in which work-item prediction is required. We inject some data points or
  illustrations to underline the defining characteristics of the WIP challenge. For non-disclosure reasons, we cannot report more
@@ -88,7 +90,7 @@ Related work is from the areas of program comprehension, mining software reposit
 We group related work entries by some common themes.
 
 
-RESULT CONCLUDING REMARKS:
+3) RESEARCH METHODOLOGY:
         In this paper, we have established the work-item prediction challenge, as it applies to software engineering workflows 
 in softwareintensive organizations.
    The defining characteristics of the challenge are these: i) engineers rely on a multitude (perhaps hundreds) of loosely integrated
@@ -98,6 +100,9 @@ of work items; iv) engineering processes (e.g., for incident response) are not e
 We have described related efforts at Facebook, where diffs (system changes), as a type of work item, are predicted.
 Such prediction is readily useful in the context of incident response in engineering (with relevance for reliability, integrity,
 privacy, and security) or the aggregation of key performance indicators for engineering processes.
+
+
+4)RESULT:
    We have provided an extended related work discussion which connects the work-item prediction challenge to research in the areas
 of program comprehension, mining software repositories, process mining, and machine learning. This discussion documents the need
 for and the potential of leveraging, advancing, and combining existing techniques to tackle the work-item prediction challenge more
