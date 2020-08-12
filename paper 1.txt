@@ -1,4 +1,4 @@
-Title:
+1) Title:
     A Soft Alignment Model for Bug Deduplication
 
 Authors names:
@@ -7,11 +7,11 @@ Authors names:
     3.Eraldo Rezende Fernandes
     4.Michel Dagenais
 
-where it:
+conference:
      In 17th International Conference on Mining Software Repositories (MSR '20), October
 5-6, 2020, Seoul, Republic of Korea. ACM, New York, NY, USA
     
-Introduction:
+2) Introduction:
       Bug fixing accounts for a substantial part of any software development project. Thus, many projects make use of a bug tracking system (BTS) to manage and track bug reports. One important task in such systems is to identify duplicate bug reports, i.e., distinct reports describing issues caused by the same bug in the software.
 It is crucial to perform this task as fast as possible in order to prevent developers from spending time looking for bugs already fixed. Usually, a triage team manually labels new reports as duplicate or not [29]. However, especially in open source projects, bug reports can be submitted by developers, testers and even end users. This
 heterogeneous environment leads to many duplicate bug reports. For example, 12% of all reports are duplicate in one Eclipse instance [4]. Therefore, devising automatic methods to detect duplicate bug reports is crucial for efficient software maintenance. In the literature, such a task is called duplicate bug report detection, bug report
@@ -57,7 +57,7 @@ Textual Module:
 EXPERIMENTAL SETUP:
         In this section, we describe the main steps of our experimental setup the evaluation methodology, training procedure, used datasets, and competing methods. The data used in this work and the developed code are freely available 1.
 
-Evaluation Methodology:
+3) Evaluation Methodology:
         Towards a more realistic evaluation setup than those used by previous deep learning methods, we evaluate our models using a rankingbased methodology similar to Sun et al. [29]. First, we sort the bug reports in a BTS by their creation date. Then, the reports are chronologically read and inserted in the training set until a specific date t.All the subsequent reports are used to create the test set. Finally, we group the reports in the training set that describe the same bug into buckets. In each bucket, the first submitted report is considered the master report and the remaining ones are the duplicate reports.
     In Table 1, we exemplify a BTS with five bug reports. Considering that t is 21/12/2018, we generate a training set composed of R1,R2, and R3 and a test set consisting of R4 and R5. The training set thus comprises two buckets: B1 = {R1, R3} and B2 = {R2}. During evaluation, we chronologically pick each report r in the test set.
     When r is a duplicate bug report, we generate a ranked list of the buckets in the system. In this work, the score of a bucket Biis the highest score yielded by a method when it compares r with each report in Bi. After checking whether r is duplicate, we consider it as submitted and insert r into its correct bucket. Following this procedure, for example, we first pick the report R4 in the scenario of Table 1. A ranked list is not produced because R4 is not duplicate and a new bucket B3 = {R4} is created. After that, the next report R5 is selected. Since it is duplicate, we generate a ranked list composed of B1, B2, and B3. Then, R5 is inserted in B1.
@@ -65,8 +65,7 @@ Evaluation Methodology:
     Like Sun et al. [29], we evaluate a method using two metrics: mean average precision (MAP) and recall rate@k (RR@k). Both metrics are based on the ranking of reports according to the scores computed by a method. MAP is a general ranking metric. In our setting, rankings only need to contain one relevant item per query to be considered a hit. Thus, MAP can be simplified as: where Q is the number of duplicate bug reports in the evaluation set and pi is the position of the correct bucket in the ranked list. RR@k is equal to the ratio of duplicate reports whose correct buckets are within the top-k buckets in the given ranking to the number of duplicate bug reports. RR@k is defined as:
                    RR@k =nkQ,
     where nk is the number of query reports in the test set for which the corresponding bucket appears in the top-k positions of the ranking computed by a method.
-
-EXPERIMENTAL RESULTS:
+ 4) RESULTS:
         Since the competing methods and SABD are stochatics, we perform five distinct runs for each experimental configuration6. We report in this section average performance in terms of MAP and RR@k, as well as standard deviations illustrated as error bands in figures and inside brackets in tables. Following Sun et al. [29], the RR@k is calculated for each k = 1, 2, . . . , 20. It is important to notice that, when evaluating a model, we include duplicate reports whose buckets are not within the considered time window. These duplicate reports are considered misses for RR@k computation, and their terms 1pi in the MAP expression are 0.
     
         
